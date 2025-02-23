@@ -1,0 +1,14 @@
+name: push workflow
+
+on:
+  push:
+      branches:
+        - main
+
+
+jobs:
+    job1:
+        run-on: ubuntu-latest
+        steps:
+            - name: Print Push Event
+              run: echo "This Workflow is Triggered by a push to the Main Branch"
