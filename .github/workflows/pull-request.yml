@@ -1,0 +1,11 @@
+name: Pull Request Workflow
+
+on:
+  pull-reqest:
+
+jobs:
+    pull-reqest-job:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Print pull Request Trigger 
+          run: echo "This Workflow is Trigger When a pull Request is a opaned"
