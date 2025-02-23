@@ -1,7 +1,7 @@
 name: Pull Request Workflow
 
 on:
-  pull-reqest:
+  pull-request:
 
 jobs:
     pull-reqest-job:
