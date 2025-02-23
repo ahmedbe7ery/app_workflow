@@ -9,4 +9,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Print Schedule Trigger
-        run: echo "This Workflow runs every 5 m"
+        run: echo "This Workflow runs every 5 muin"
