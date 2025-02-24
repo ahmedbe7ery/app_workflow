@@ -2,11 +2,11 @@ name: schedule Workflow
 
 on:
   schedule:
-    - cron: '*/5 * * * *'
+    - cron: '0 09 25 * *'
 
 jobs:
   schedule-job:
     runs-on: ubuntu-latest
     steps:
       - name: Print Schedule Trigger
-        run: echo "This Workflow runs every 5 muin"
+        run: echo "This Workflow runs 25th of every month "
