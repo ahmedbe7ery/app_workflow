@@ -20,7 +20,7 @@ jobs:
           node-version: '18'
 
       - name: Install Dependencies
-        run: npm hnstall
+        run: npm install
 
       - name: Build App
         run: npm run build
