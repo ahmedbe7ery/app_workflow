@@ -19,11 +19,14 @@ jobs:
         with:
           node-version: '18'
 
+      - name: Clean npm cache
+        run: npm cache clean --force
+
       - name: Install Dependencies
-        run: npm hnstall
+        run: npm install
 
       - name: Build App
         run: npm run build
 
       - name: Deploy App
-        run: echo "Deploying app"
+        run: echo "Deploying App"
