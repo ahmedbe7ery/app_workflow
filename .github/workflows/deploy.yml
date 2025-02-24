@@ -5,6 +5,7 @@ on:
     branches:
       - main
 
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -18,5 +19,11 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Deploy to GitHub Pages
-        run: echo "Hello, GitHub Actions! Your deployment is successful."
+      - name: Install Dependencies
+        run: npm hnstall
+
+      - name: Build App
+        run: npm run build
+
+      - name: Deploy App
+        run: echo "Deploying app"
