@@ -26,4 +26,4 @@ jobs:
         run: npm run build
 
       - name: Deploy App
-        run: echo "Deploying app"
+        run: echo "Deploying App"
