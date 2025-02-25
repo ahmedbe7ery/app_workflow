@@ -15,8 +15,11 @@ jobs:
         id: datetime
         uses: ajayg2808/datetime@v1.2.0
         with:
-          format: 'YYYY-MM-DD HH:mm:ss'  # يمكنك تغيير التنسيق حسب الحاجة
+          format: 'YYYY-MM-DD HH:mm:ss' 
 
+      - name: Debug datetime_value
+        run: echo "Generated datetime: ${{ steps.datetime.outputs.datetime }}"
+        
   job_2:
     runs-on: ubuntu-latest
     needs: job_1
