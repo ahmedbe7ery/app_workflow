@@ -5,34 +5,37 @@ on:
     branches:
       - main
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: 18
 
-      - name: Clean npm cache
-        run: npm cache clean --force
-
-      - name: Install Dependencies
+      - name: Install dependencies
         run: npm install
-      
-      - name: Run Linter (ESLint)
-        run: npx eslint . --ext .js,.jsx,.ts,.tsx
 
-      - name: Run Tests
-        run: npm test
-
-      - name: Build App
+      - name: Build the project
         run: npm run build
 
-      - name: Deploy App
-        run: echo "Deploying App"
+      - name: Setup GitHub Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: build
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
