@@ -16,6 +16,7 @@ jobs:
         uses: ajayg2808/datetime@v1.2.0
         with:
           format: 'YYYY-MM-DD HH:mm:ss'
+          timezone: "UTC" 
 
   job_2:
     runs-on: ubuntu-latest
