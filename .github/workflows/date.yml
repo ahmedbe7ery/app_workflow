@@ -15,14 +15,11 @@ jobs:
         id: datetime
         uses: ajayg2808/datetime@v1.2.0
         with:
-          format: 'YYYY-MM-DD HH:mm:ss' 
+          format: 'YYYY-MM-DD HH:mm:ss'
 
-      - name: Debug datetime_value
-        run: echo "Generated datetime: ${{ steps.datetime.outputs.datetime }}"
-        
   job_2:
     runs-on: ubuntu-latest
     needs: job_1
     steps:
       - name: Use Date and Time from Job 1
-        run: echo "Date and Time: ${{ needs.job_1.outputs.datetime_value }}"
+        run: echo "Date and Time:${{ needs.job_1.outputs.datetime_value }}"
