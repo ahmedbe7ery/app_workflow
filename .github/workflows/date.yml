@@ -20,4 +20,4 @@ jobs:
     needs: job_1
     steps:
       - name: Use Date and Time from Job 1
-        run: echo "Date and Time: ${{ needs.job_1.outputs.datetime_value }}"
+        run: echo "Date and Time: ${{ needs.job_1.outputs.datetime }}"
