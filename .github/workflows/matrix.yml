@@ -1,9 +1,6 @@
 name: Matrix Example
 
-on:
-  push:
-    branches:
-      - main
+on: push
 
 jobs:
   test-matrix:
@@ -11,6 +8,12 @@ jobs:
       matrix:
         os: [ubuntu-latest, macos-latest]
         node-version: [16, 18]
+      include:
+        - os: ubuntu-latest
+          node-version: 18
+      exclude:
+        - os: macos-latest
+          node-version: 16
     runs-on: ${{ matrix.os }}
 
     steps:
@@ -26,3 +29,4 @@ jobs:
         run: |
           echo "Running on ${{ matrix.os }}"
           node -v
+          ls
